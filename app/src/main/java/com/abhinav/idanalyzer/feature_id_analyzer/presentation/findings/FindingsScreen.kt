@@ -220,7 +220,11 @@ fun FindingsScreen(
                    state.filteredList.forEach {item->
                        EntryListItem(
                            modifier = Modifier.fillMaxWidth(),
-                           idAnalyzer = item
+                           idAnalyzer = item,
+                           onDeleteClicked = {
+
+                           },
+                           shouldShowDeleteIcon = true
                        )
                    }
                }else{

@@ -6,4 +6,5 @@ class IdAnalyzerUseCase(repo: IdAnalyzerRepo){
     val getEntriesWithIdUseCase = GetEntriesWithId(repo)
     val getEntriesWithoutIdUseCase = GetEntriesWithoutId(repo)
     val getFilteredEntries = GetFilteredEntries(repo)
+    val deleteIdAnalyzerUseCase = IdAnalyzerDelete(repo)
 }

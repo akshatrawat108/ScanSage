@@ -61,7 +61,11 @@ fun WithIdScreen(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp, vertical = 8.dp),
-                idAnalyzer = item
+                idAnalyzer = item,
+                onDeleteClicked = {
+                    viewModel.onEvent(AnalyzerEvent.Delete(item))
+                },
+                shouldShowDeleteIcon = true
             )
         }
 

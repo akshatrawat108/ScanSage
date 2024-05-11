@@ -108,7 +108,11 @@ fun NotificationScreen(
                     EntryListItem(
                         modifier = Modifier.fillMaxWidth()
                             .padding(horizontal = 16.dp, vertical = 8.dp),
-                        idAnalyzer = it
+                        idAnalyzer = it,
+                        onDeleteClicked = {
+
+                        },
+                        shouldShowDeleteIcon = true
                     )
                 }
             }

@@ -8,6 +8,7 @@ import com.abhinav.idanalyzer.feature_id_analyzer.domain.usecase.IdAnalyzerUseCa
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.realm.kotlin.mongodb.App
 import io.realm.kotlin.types.RealmInstant
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.launchIn
@@ -38,6 +39,20 @@ class AnalyzerViewModel @Inject constructor(
         }.launchIn(viewModelScope)
     }
 
+    fun onEvent(
+        event: AnalyzerEvent
+    ){
+        when(event){
+            is AnalyzerEvent.Delete -> {
+                viewModelScope.launch(Dispatchers.IO) {
+                    idAnalyzerUseCase.deleteIdAnalyzerUseCase.invoke(
+                        event.idAnalyzer._id
+                    )
+                }
+            }
+        }
+    }
+
     private fun getData(){
        idAnalyzerUseCase.getEntriesWithIdUseCase.invoke().onEach {list->
            _state.value = state.value.copy(
@@ -58,6 +73,10 @@ class AnalyzerViewModel @Inject constructor(
         }
     }
 
+}
+
+sealed class AnalyzerEvent{
+    data class Delete(val idAnalyzer: IdAnalyzer) : AnalyzerEvent()
 }
 
 data class FilteredData(
