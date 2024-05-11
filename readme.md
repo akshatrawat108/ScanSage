@@ -22,7 +22,7 @@ Android Application Component: The Android application syncs data from the Mongo
 
 To set up ScanSage, follow these steps:
 
-- Clone the repository: git clone https://github.com/your-username/ScanSage.git
+- Clone the repository: git clone [https://github.com/akshatrawat108/ScanSage](https://github.com/akshatrawat108/ScanSage)
 - Install the necessary dependencies for both the ML model and the Android application.
 Configure the MongoDB connection settings.
 Build and run the ML model component.
@@ -57,7 +57,7 @@ Generates notifications for ID card violations.
 To contribute to ScanSage development, follow these steps:
 
 - Fork the repository to your GitHub account.
-- Clone your fork: git clone https://github.com/your-username/ScanSage.git
+- Clone your fork: git clone [https://github.com/akshatrawat108/ScanSage](https://github.com/akshatrawat108/ScanSage)
 - Create a new branch for your feature or bug fix: git checkout -b feature-or-fix-name
 - Make your changes and commit them: git commit -m "Your commit message"
 - Push your changes to your fork: git push origin feature-or-fix-name
