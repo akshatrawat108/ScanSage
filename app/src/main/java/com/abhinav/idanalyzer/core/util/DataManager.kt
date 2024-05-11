@@ -14,11 +14,15 @@ object DataManager {
     }
 
     fun getImageFromByteArray(byteArray: ByteArray): Bitmap{
-        val outputStream = ByteArrayOutputStream()
-        outputStream.write(byteArray)
+        return try {
+            val outputStream = ByteArrayOutputStream()
+            outputStream.write(byteArray)
 
-        val bitmapData = outputStream.toByteArray()
-        return createBitmapFromByteArray(bitmapData)
+            val bitmapData = outputStream.toByteArray()
+            createBitmapFromByteArray(bitmapData)
+        }catch (e: Exception){
+            Bitmap.createBitmap(0, 0, Bitmap.Config.ARGB_8888)
+        }
     }
 
     fun getImageFromChunks(chunks: List<IdAnalyzer>): Bitmap {

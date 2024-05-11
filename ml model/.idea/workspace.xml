@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fc3adbd5-902c-4860-a895-cf72c8a16533" name="Changes" comment="integrating ckecking and counting both run in webcam.py counting is working perfectly the whole thing runs there is some logical error in checking still.">
+      <change afterPath="$PROJECT_DIR$/scripts/dataone.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/dataone_testingboxes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/upload_only.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/webcam_supervision_experimental.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/webcam_third_try.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/webcam.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/webcam.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;adityaRajPratapSingh&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/adityaRajPratapSingh/yolo3.git&quot;,
+    &quot;accountId&quot;: &quot;73f29d31-d899-466d-bc91-79fc32f24cbc&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2fn6LcPtFlINhOKKwhy0NFJgwvm" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.dataone.executor": "Run",
+    "Python.demo.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.predict_video.executor": "Run",
+    "Python.predict_video_2.executor": "Run",
+    "Python.trackingAndCounting.executor": "Run",
+    "Python.trackingCountingAndChecking.executor": "Run",
+    "Python.upload_only.executor": "Run",
+    "Python.webcam.executor": "Run",
+    "Python.webcam_supervision_experimental.executor": "Run",
+    "Python.webcam_third_try.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Apps\yolo3\scripts" />
+      <recent name="D:\Apps\yolo3\ptWeights" />
+      <recent name="D:\Apps\yolo3\requirements" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-0509580d9d50-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fc3adbd5-902c-4860-a895-cf72c8a16533" name="Changes" comment="" />
+      <created>1714424440112</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714424440112</updated>
+    </task>
+    <task id="LOCAL-00001" summary="first commit after creating the new main.py and config.yaml files.">
+      <option name="closed" value="true" />
+      <created>1714426406217</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1714426406217</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first commit after creating the new main.py and config.yaml files.">
+      <option name="closed" value="true" />
+      <created>1714426708588</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714426708588</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added the requirements.txt file for the VE(.venv)">
+      <option name="closed" value="true" />
+      <created>1714432517736</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714432517736</updated>
+    </task>
+    <task id="LOCAL-00004" summary="done with training went with mostly online not local, ready to start infrencing now..">
+      <option name="closed" value="true" />
+      <created>1715204541419</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715204541419</updated>
+    </task>
+    <task id="LOCAL-00005" summary="predict_video.py and demo.py added">
+      <option name="closed" value="true" />
+      <created>1715224122247</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1715224122247</updated>
+    </task>
+    <task id="LOCAL-00006" summary="trackingAndCounting.py added">
+      <option name="closed" value="true" />
+      <created>1715255990366</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1715255990366</updated>
+    </task>
+    <task id="LOCAL-00007" summary="trackingAndCounting.py completed">
+      <option name="closed" value="true" />
+      <created>1715276246624</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1715276246624</updated>
+    </task>
+    <task id="LOCAL-00008" summary="correct region and logic for counting total in of every class is defined in trackingCountingAndChecking.py, now to start the checking part">
+      <option name="closed" value="true" />
+      <created>1715298433796</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715298433796</updated>
+    </task>
+    <task id="LOCAL-00009" summary="correct region and logic for counting total in of every class is defined in trackingCountingAndChecking.py, now to start the checking part">
+      <option name="closed" value="true" />
+      <created>1715298652483</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1715298652483</updated>
+    </task>
+    <task id="LOCAL-00010" summary="correct region and logic for counting total in of every class is defined in trackingCountingAndChecking.py, now to start the checking part">
+      <option name="closed" value="true" />
+      <created>1715301921113</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715301921113</updated>
+    </task>
+    <task id="LOCAL-00011" summary="when i started chaning webcam.py">
+      <option name="closed" value="true" />
+      <created>1715340870781</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1715340870781</updated>
+    </task>
+    <task id="LOCAL-00012" summary="integrating ckecking and counting both run in webcam.py counting is working perfectly the whole thing runs there is some logical error in checking still.">
+      <option name="closed" value="true" />
+      <created>1715345709199</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715345709199</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="second commit after fixing a small error in main.py" />
+    <MESSAGE value="second commit after fixing a small error in main.py" />
+    <MESSAGE value="added the requirements.txt file for the VE(.venv)" />
+    <MESSAGE value="done with training went with mostly online not local, ready to start infrencing now.." />
+    <MESSAGE value="predict_video.py and demo.py added" />
+    <MESSAGE value="trackingAndCounting.py added" />
+    <MESSAGE value="trackingAndCounting.py completed" />
+    <MESSAGE value="correct region and logic for counting total in of every class is defined in trackingCounting_2.py, now to start the checking part" />
+    <MESSAGE value="correct region and logic for counting total in of every class is defined in trackingCounting_2.py, now to start the checking part" />
+    <MESSAGE value="correct region and logic for counting total in of every class is defined in trackingCounting_2.py, now to start the checking part" />
+    <MESSAGE value="correct region and logic for counting total in of every class is defined in trackingCounting_2.py, now to start the checking part finally" />
+    <MESSAGE value="correct region and logic for counting total in of every class is defined in trackingCountingAndChecking.py, now to start the checking part finally" />
+    <MESSAGE value="correct region and logic for counting total in of every class is defined in trackingCounting_2.py, now to start the checking part finally" />
+    <MESSAGE value="when i started chaning webcam.py" />
+    <MESSAGE value="integrating ckecking and counting both run in webcam.py counting is working perfectly the whole thing runs there is some logical error in checking still." />
+    <option name="LAST_COMMIT_MESSAGE" value="integrating ckecking and counting both run in webcam.py counting is working perfectly the whole thing runs there is some logical error in checking still." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/scripts/trackingCountingAndChecking.py</url>
+          <line>7</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

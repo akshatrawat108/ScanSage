@@ -35,7 +35,7 @@ object Module{
                 .initialSubscriptions { sub ->
                     add(query = sub.query<IdAnalyzer>(query = "owner_id == $0", ""))
                 }
-                .log(LogLevel.ALL)
+                .log(LogLevel.ERROR)
                 .build()
             realm = Realm.open(config)
         }

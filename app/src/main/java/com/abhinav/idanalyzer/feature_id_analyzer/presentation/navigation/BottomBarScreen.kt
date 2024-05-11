@@ -30,11 +30,4 @@ sealed class BottomBarScreen(
         selectedIcon = Icons.Filled.Search,
         unselectedIcon = Icons.Outlined.Search
     )
-
-    data object Profile : BottomBarScreen(
-        route = "profile",
-        title = "Profile",
-        selectedIcon = Icons.Filled.Person,
-        unselectedIcon = Icons.Outlined.PersonOutline
-    )
 }

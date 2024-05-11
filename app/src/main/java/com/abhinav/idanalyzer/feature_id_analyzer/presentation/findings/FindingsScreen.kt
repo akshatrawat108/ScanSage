@@ -224,13 +224,16 @@ fun FindingsScreen(
                        )
                    }
                }else{
-                   Box {
+                   Box(
+                       modifier = Modifier.fillMaxSize(),
+                       contentAlignment = Alignment.Center
+                   ) {
                        Text(
                            modifier = Modifier.align(Alignment.Center),
                            text = "No entries have been found for the given time",
                            color = MaterialTheme.colorScheme.surface,
                            fontSize = 17.sp,
-                           fontWeight = FontWeight.SemiBold,
+                           fontWeight = FontWeight.Normal,
                            textAlign = TextAlign.Center
                        )
                    }

@@ -7,6 +7,7 @@ import com.abhinav.idanalyzer.feature_id_analyzer.domain.IdAnalyzer
 import com.abhinav.idanalyzer.feature_id_analyzer.domain.usecase.IdAnalyzerUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.realm.kotlin.mongodb.App
+import io.realm.kotlin.types.RealmInstant
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.launchIn
@@ -22,8 +23,19 @@ class AnalyzerViewModel @Inject constructor(
     private val _state = MutableStateFlow(AnalyzerState())
     val state = _state.asStateFlow()
 
+    private val _filteredState = MutableStateFlow(FilteredData())
+    val filteredState = _filteredState.asStateFlow()
+
     init {
         getData()
+    }
+
+    fun getFilteredData(fromRange: RealmInstant, endRealmInstant: RealmInstant){
+        idAnalyzerUseCase.getFilteredEntries.invoke(fromRange, endRealmInstant).onEach {
+            _filteredState.value = _filteredState.value.copy(
+                filteredData =  it
+            )
+        }.launchIn(viewModelScope)
     }
 
     private fun getData(){
@@ -48,7 +60,11 @@ class AnalyzerViewModel @Inject constructor(
 
 }
 
+data class FilteredData(
+    val filteredData: List<IdAnalyzer> = emptyList()
+)
+
 data class AnalyzerState(
     val listWithId: List<IdAnalyzer> = emptyList(),
-    val listWithoutId: List<IdAnalyzer> = emptyList(),
+    val listWithoutId: List<IdAnalyzer> = emptyList()
 )

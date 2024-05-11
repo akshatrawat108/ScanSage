@@ -10,7 +10,7 @@ class GetFilteredEntries(private val repo: IdAnalyzerRepo) {
 
     operator fun invoke(fromRange: RealmInstant, endRange: RealmInstant): Flow<List<IdAnalyzer>> {
         return repo.getData().map {
-            it.filter { entry -> entry.date in (fromRange..endRange)  }
+            it.filter { entry -> entry.date.epochSeconds in (fromRange.epochSeconds..endRange.epochSeconds)  }
         }
     }
 

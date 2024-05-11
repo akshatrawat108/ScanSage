@@ -10,10 +10,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.abhinav.idanalyzer.feature_id_analyzer.presentation.analyzer_screen.EntryFullScreen
 import com.abhinav.idanalyzer.feature_id_analyzer.presentation.analyzer_screen.HomeScreen
 import com.abhinav.idanalyzer.feature_id_analyzer.presentation.findings.FindingsScreen
 import com.abhinav.idanalyzer.feature_id_analyzer.presentation.new_features.WhatsNewScreen
 import com.abhinav.idanalyzer.feature_id_analyzer.presentation.notification.NotificationScreen
+import com.abhinav.idanalyzer.feature_id_analyzer.presentation.user_authentication.LogInScreen
+import com.abhinav.idanalyzer.feature_id_analyzer.presentation.user_authentication.SignUpScreen
 
 @Composable
 fun HomeNavGraph(
@@ -30,7 +33,10 @@ fun HomeNavGraph(
         composable(
             route = BottomBarScreen.Home.route
         ) {
-            HomeScreen(navController = navController)
+            HomeScreen(
+                navController = navController,
+                activity = activity
+            )
         }
         composable(
             route = BottomBarScreen.Findings.route
@@ -38,9 +44,15 @@ fun HomeNavGraph(
             FindingsScreen(navController = navController)
         }
         composable(
-            route = BottomBarScreen.Profile.route
+            route = AuthScreen.Login.route
         ){
+            LogInScreen(navController = navController)
+        }
 
+        composable(
+            route = AuthScreen.Register.route
+        ){
+            SignUpScreen(navController = navController)
         }
 
         homeDetailsNavGraph(navController = navController, activity = activity)
@@ -79,6 +91,15 @@ fun NavGraphBuilder.homeDetailsNavGraph(
                 navController = navController
             )
         }
+        composable(
+            route = HomeDetails.DetailsScreen.route +
+            "?id={}"
+        ){
+            // EntryFullScreen(
+              //  idAnalyzer = ,
+              //  navController = navController
+            //)
+        }
     }
 
 }
@@ -88,4 +109,5 @@ sealed class HomeDetails(val route: String){
     data object Download: HomeDetails(route = "download")
     data object WhatsNew: HomeDetails(route = "whats_new")
     data object Notification : HomeDetails(route = "notification")
+    data object DetailsScreen : HomeDetails(route = "details_screen")
 }

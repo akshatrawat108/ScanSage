@@ -1,5 +1,6 @@
 package com.abhinav.idanalyzer.feature_id_analyzer.presentation.analyzer_screen.components
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -18,13 +19,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import co.yml.charts.common.extensions.isNotNull
 import coil.compose.AsyncImage
+import com.abhinav.idanalyzer.R
 import com.abhinav.idanalyzer.core.util.DataManager
 import com.abhinav.idanalyzer.feature_id_analyzer.domain.IdAnalyzer
 import java.text.SimpleDateFormat
+import java.time.ZoneOffset
+import java.time.format.DateTimeFormatter
 import java.util.Date
 import java.util.Locale
 
@@ -39,7 +45,7 @@ fun EntryListItem(
             containerColor = MaterialTheme.colorScheme.secondary,
             contentColor = MaterialTheme.colorScheme.surface
         ),
-        shape = RoundedCornerShape(24.dp),
+        shape = RoundedCornerShape(16.dp),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 4.dp
         )
@@ -49,42 +55,73 @@ fun EntryListItem(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceEvenly
         ){
-            Card(
-                modifier = Modifier
-                    .height(80.dp)
-                    .width(80.dp)
-                    .padding(8.dp),
-                shape = RoundedCornerShape(8.dp),
-            ) {
-                AsyncImage(
-                    modifier = Modifier.fillMaxSize(),
-                    model = DataManager.getImageFromByteArray(idAnalyzer.imageData),
-                    contentDescription = "image",
-                    contentScale = ContentScale.Crop
-                )
+
+            val imageData = DataManager.getImageFromByteArray(idAnalyzer.imageData)
+
+            if(imageData.isNotNull() && imageData.width > 0 && imageData.height > 0){
+                Card(
+                    modifier = Modifier
+                        .height(80.dp)
+                        .width(80.dp)
+                        .padding(8.dp),
+                    shape = RoundedCornerShape(16.dp),
+                ) {
+                    AsyncImage(
+                        modifier = Modifier.fillMaxSize(),
+                        model = imageData,
+                        contentDescription = "image",
+                        contentScale = ContentScale.Crop
+                    )
+                }
+            }else{
+                Card(
+                    modifier = Modifier
+                        .height(80.dp)
+                        .width(80.dp)
+                        .padding(8.dp),
+                    shape = RoundedCornerShape(16.dp),
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.placeholder),
+                        contentDescription = "placeHolder"
+                    )
+                }
             }
 
-            val time = SimpleDateFormat("hh:mm a", Locale.getDefault())
-                .format(Date.from(idAnalyzer.date.toInstant())).uppercase()
+            val localDateTime = idAnalyzer.date.toInstant().atZone(ZoneOffset.UTC).toLocalDateTime()
+            val formattedTime = localDateTime.format(DateTimeFormatter.ofPattern("hh:mm"))
+            val formattedDate = localDateTime.format(DateTimeFormatter.ofPattern("MMM dd yyyy"))
 
             Column(
-                modifier = Modifier.fillMaxWidth()
+                modifier = Modifier
+                    .fillMaxWidth()
                     .padding(vertical = 8.dp),
                 verticalArrangement = Arrangement.Center
             ){
+
+                val text = if(idAnalyzer.isPersonWithoutId) "Person does not have id" else "Person have Id"
+
                 Text(
-                    text = "Id card detected",
+                    text = text,
                     color = Color.Black,
-                    fontSize =17.sp,
+                    fontSize =15.sp,
                     style = MaterialTheme.typography.bodyMedium,
                     textAlign = TextAlign.Center
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Time : $time",
+                    text = "Time : $formattedTime",
                     style = MaterialTheme.typography.bodySmall,
                     color = Color.Black,
-                    fontSize = 17.sp,
+                    fontSize = 15.sp,
+                    textAlign = TextAlign.Center
+                )
+                Spacer(modifier = Modifier.height(8.dp))
+                Text(
+                    text = "Date : $formattedDate",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = Color.Black,
+                    fontSize = 15.sp,
                     textAlign = TextAlign.Center
                 )
             }

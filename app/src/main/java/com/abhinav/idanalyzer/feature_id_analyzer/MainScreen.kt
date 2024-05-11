@@ -59,8 +59,7 @@ fun BottomBar(
 ){
     val screens = listOf(
         BottomBarScreen.Home,
-        BottomBarScreen.Findings,
-        BottomBarScreen.Profile
+        BottomBarScreen.Findings
     )
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -76,7 +75,7 @@ fun BottomBar(
             containerColor = MaterialTheme.colorScheme.onPrimaryContainer,
             windowInsets = NavigationBarDefaults.windowInsets
         ) {
-            screens.forEachIndexed { index, bottomBarScreen ->
+            screens.forEachIndexed { _, bottomBarScreen ->
                 AddItem(
                     screen = bottomBarScreen,
                     navController = navController,

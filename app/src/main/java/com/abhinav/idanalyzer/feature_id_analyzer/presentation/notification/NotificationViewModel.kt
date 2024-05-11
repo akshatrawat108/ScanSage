@@ -1,6 +1,7 @@
 package com.abhinav.idanalyzer.feature_id_analyzer.presentation.notification
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.work.Constraints
@@ -45,14 +46,15 @@ class NotificationViewModel @Inject constructor(
     }
 
     fun addDatePeriodicWorker(context: Context) {
-
         val constraints = Constraints.Builder()
             .setRequiredNetworkType(NetworkType.CONNECTED)
             .build()
 
-        val workRequest = PeriodicWorkRequestBuilder<NotificationWorker>(15, TimeUnit.SECONDS)
+        val workRequest = PeriodicWorkRequestBuilder<NotificationWorker>(3, TimeUnit.SECONDS)
             .setConstraints(constraints)
             .build()
+
+        Log.e("NotificationViewModel" , "it shld add workmanager")
         WorkManager.getInstance(context).enqueue(workRequest)
     }
 }

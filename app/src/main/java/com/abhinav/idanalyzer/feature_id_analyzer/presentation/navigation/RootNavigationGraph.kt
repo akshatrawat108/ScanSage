@@ -24,15 +24,10 @@ fun RootNavigationGraph(
         composable(route = Graph.HOME){
             MainScreen(activity = activity)
         }
-        composable(
-            route = AuthScreen.Login.route
-        ){
+        composable(route = AuthScreen.Login.route){
             LogInScreen(navController = navController)
         }
-
-        composable(
-            route = AuthScreen.Register.route
-        ){
+        composable(route = AuthScreen.Register.route){
             SignUpScreen(navController = navController)
         }
     }

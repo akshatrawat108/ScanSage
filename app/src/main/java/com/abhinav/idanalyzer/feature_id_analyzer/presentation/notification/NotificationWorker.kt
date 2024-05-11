@@ -21,7 +21,6 @@ class NotificationWorker @AssistedInject constructor(
     private val idAnalyzerUseCase: IdAnalyzerUseCase
 ): CoroutineWorker(context, workerParameters) {
 
-
     @SuppressLint("RestrictedApi")
     override suspend fun doWork(): Result {
         val listIdAnalyzer = mutableListOf<IdAnalyzer>()
@@ -48,7 +47,7 @@ class NotificationWorker @AssistedInject constructor(
         val currentInstant = Instant.now()
         val diff = Duration.between(currentInstant, itemInstant).seconds
         Log.e("NotificationWorker" , "diff -> $diff")
-        if(diff <= 5){
+        if(diff <= 50000){
             val notificationManager = NotificationHelper(context = context)
             notificationManager.createNotificationChannel()
             notificationManager.showNotification(DataManager.getImageFromByteArray(item.imageData))

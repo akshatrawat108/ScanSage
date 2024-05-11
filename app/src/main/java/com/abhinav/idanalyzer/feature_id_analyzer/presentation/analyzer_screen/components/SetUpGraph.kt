@@ -42,6 +42,7 @@ import com.abhinav.idanalyzer.feature_id_analyzer.presentation.analyzer_screen.A
 import io.realm.kotlin.types.RealmInstant
 import java.time.Instant
 import java.time.ZoneId
+import java.time.ZoneOffset
 
 @Composable
 fun SetUpGraph(
@@ -238,7 +239,7 @@ fun getListOfTime(
     val map = mutableMapOf<Int, Int>()
 
     list.forEach { idAnalyzer ->
-        val localDateTime = idAnalyzer.date.toInstant().atZone(ZoneId.systemDefault())
+        val localDateTime = idAnalyzer.date.toInstant().atZone(ZoneOffset.UTC).toLocalDateTime()
         map[localDateTime.hour] = map.getOrDefault(localDateTime.hour, 0) + 1
     }
     return map
